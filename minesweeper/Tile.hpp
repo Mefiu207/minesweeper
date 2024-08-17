@@ -27,12 +27,12 @@
             int _x;
             int _y;
 
-            // charaktrystyka pola
-            bool _flag;
-            bool _mine;
-
-            // czy pole jest odkryte
+           // czy pole jest odkryte
             bool _revealed;
+
+            // charaktrystyka pola
+            bool _mine;
+            bool _flag;
 
             // liczba min w okolicy
             int _number_of_mines;

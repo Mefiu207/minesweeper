@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "c:/Users/Mateusz/Desktop/C++/Projekty/minesweeper",
-      "program": "c:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/build/Debug/outDebug",
+      "program": "c:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/build",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
