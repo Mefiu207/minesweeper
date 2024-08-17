@@ -4,6 +4,7 @@
     #include <random>
     #include <array>
     #include <set>
+    #include <chrono>
 
     #include "Tile.hpp"
     #define N 20
@@ -25,12 +26,9 @@
                     vec.clear();
                     for (int j = 0; j < N; j++)
                     {
-                        // std::cout << j << std::endl;
                         vec.push_back(Tile(i, j));
-                        // std::cout << "dupa" << std::endl;
                     }
                     _field.push_back(vec);
-                    std::cout << i << std::endl;
                 }
 
 
@@ -57,24 +55,26 @@
             // Wybiera miejsca na miny
             void choose_mines_spots()
             {
-                std::random_device rd;
-                std::mt19937 gen(rd());
-                std::uniform_int_distribution<> distrib(0, N - 1);
+                  // Używanie czasu systemowego jako ziarna dla generatora
+                    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+                    std::mt19937 gen(seed); // Generator liczb losowych z nowym ziarnem
+                    std::uniform_int_distribution<> distrib(0, N - 1);
 
-                std::set<std::pair<int, int>> spots_set; // Używamy zbioru do przechowywania unikalnych pozycji min
+                    std::set<std::pair<int, int>> spots_set; // Używamy zbioru do przechowywania unikalnych pozycji min
 
-                while (spots_set.size() < mine_number) 
-                {
-                    int x = distrib(gen);
-                    int y = distrib(gen);
+                    // Wybieranie unikalnych pozycji dla min
+                    while (spots_set.size() < mine_number) 
+                    {
+                        int x = distrib(gen);
+                        int y = distrib(gen);
 
-                    // Dodajemy parę do zbioru (jeśli już istnieje, nie zostanie dodana ponownie)
-                    spots_set.insert({x, y});
+                        // Dodajemy parę do zbioru (jeśli już istnieje, nie zostanie dodana ponownie)
+                        spots_set.insert({x, y});
+                    }
+
+                    // Konwertujemy set na vector
+                    _spots.assign(spots_set.begin(), spots_set.end());
                 }
-
-                // Konwertujemy set na vector
-                _spots.assign(spots_set.begin(), spots_set.end());
-            }
 
 
             // ustawia miny na miejscach oraz daje inforamcje o minach sasiednim polom
@@ -82,26 +82,20 @@
             {
                 for(auto i : _spots) 
                 { 
-                    dupa("once");
                     _field[i.first][i.second].set_mine();
                     
                     if((i.first - 1) >= 0 && (i.second - 1) >= 0) _field[i.first - 1][i.second - 1].add_number_of_mines();
-                    if((i.first - 1) >= 0 && (i.second >= 0)) _field[i.first - 1][i.second].add_number_of_mines();
-                    if((i.first - 1) >= 0 && ((i.second + 1) >= 0)) _field[i.first - 1][i.second + 1].add_number_of_mines();
+                    if((i.first - 1) >= 0) _field[i.first - 1][i.second].add_number_of_mines();
+                    if((i.first - 1) >= 0 && ((i.second + 1) < N)) _field[i.first - 1][i.second + 1].add_number_of_mines();
 
-                    if(i.first >= 0 && (i.second - 1) >= 0) _field[i.first][i.second - 1].add_number_of_mines();
-                    if(i.first >= 0 && (i.second + 1) >= 0) _field[i.first][i.second + 1].add_number_of_mines();
-                    dupa("srodek");
+                    if((i.second - 1) >= 0) _field[i.first][i.second - 1].add_number_of_mines();
+                    if((i.second + 1) < N) _field[i.first][i.second + 1].add_number_of_mines();
                     
-                    if((i.first + 1) >= 0 && (i.second - 1) >= 0) _field[i.first + 1][i.second - 1].add_number_of_mines();
-                    dupa("1");
-                    if((i.first + 1) >= 0 && (i.second >= 0)) _field[i.first + 1][i.second].add_number_of_mines();
-                    dupa("2");
-                    if((i.first + 1) >= 0 && ((i.second + 1) >= 0)) _field[i.first + 1][i.second + 1].add_number_of_mines();
-                    dupa("koniec?");
+                    if((i.first + 1) > N && (i.second - 1) >= 0) _field[i.first + 1][i.second - 1].add_number_of_mines();
+                    if((i.first + 1) > N) _field[i.first + 1][i.second].add_number_of_mines();
+                    if((i.first + 1) > N && ((i.second + 1) > N)) _field[i.first + 1][i.second + 1].add_number_of_mines();
 
                 }
-                dupa("koniec?");
             }
 
         private:
