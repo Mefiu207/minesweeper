@@ -24,3 +24,5 @@ void Tile::draw()
 void Tile::add_number_of_mines() { if(!_mine) _number_of_mines++; }
 
 void Tile::set_mine() { _mine = 1; }
+
+void Tile::flag() { _flag = 1; }

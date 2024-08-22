@@ -15,8 +15,6 @@
     {
         public:
             
-            void dupa(std::string cus = "dupa") { std::cout << cus << std::endl;}
-
             // Konstuktor bazowy, inicjalizuje wszystkie miejsca 
             Field()
             {
@@ -33,8 +31,6 @@
 
 
                 choose_mines_spots();
-
-                dupa();
 
                 set_and_flood();
             }
@@ -76,7 +72,6 @@
                     _spots.assign(spots_set.begin(), spots_set.end());
                 }
 
-
             // ustawia miny na miejscach oraz daje inforamcje o minach sasiednim polom
             void set_and_flood()
             {
@@ -98,6 +93,9 @@
                 }
             }
 
+            // Zwraca ilosc min
+            int get_mine_number() { return mine_number; }
+
         private:
 
             // przetrzymuje pozycje min
@@ -105,4 +103,5 @@
 
             // Pole do gry
             std::vector<std::vector<Tile>> _field;
+
     };

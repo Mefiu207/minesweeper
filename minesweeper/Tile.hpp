@@ -21,6 +21,9 @@
             // Ustawia mine
             void set_mine();
 
+            // Flaguje pole
+            void flag();
+
         private:
             
             // pozycja pola

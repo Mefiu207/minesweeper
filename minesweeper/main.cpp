@@ -1,7 +1,8 @@
 #include <iostream>
 
-#include "Tile.hpp"
-#include "Field.hpp" 
+// #include "Tile.hpp"
+// #include "Field.hpp" 
+#include "Game.hpp"
 
 int print_menu()
 {
@@ -14,15 +15,26 @@ int print_menu()
     return option;
 }
 
+void play_game()
+{
+    Game Game;
+    Game.dispaly();
+}
+
 int main()
 {
     std::cout << "Hello. Welcome to minesweeper.\n";
-    // int option = print_menu();
+    int option = print_menu();
 
-    // int option;
-    // std::cin >> option;
+    switch (option)
+    {
+    case 1:
+        play_game();
+        break;
+    
+    default:
+        break;
+    }
 
-    Field field;
-
-    field.paint();   
+  
 }

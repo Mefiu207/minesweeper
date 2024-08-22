@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: Minesweeper
-# Configurations: 
+# Configurations: Debug
 # =============================================================================
 
 #############################################
@@ -20,6 +20,11 @@
 
 ninja_required_version = 1.5
 
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
 # =============================================================================
 # Include auxiliary files.
 
@@ -44,15 +49,24 @@ cmake_ninja_workdir = C$:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/build/
 
 build cmake_object_order_depends_target_Minesweeper: phony || CMakeFiles/Minesweeper.dir
 
-build CMakeFiles/Minesweeper.dir/main.cpp.obj: CXX_COMPILER__Minesweeper_unscanned_ C$:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/main.cpp || cmake_object_order_depends_target_Minesweeper
+build CMakeFiles/Minesweeper.dir/main.cpp.obj: CXX_COMPILER__Minesweeper_unscanned_Debug C$:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/main.cpp || cmake_object_order_depends_target_Minesweeper
   DEP_FILE = CMakeFiles\Minesweeper.dir\main.cpp.obj.d
-  INCLUDES = -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp
+  FLAGS = -g
+  INCLUDES = -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.hpp
   OBJECT_DIR = CMakeFiles\Minesweeper.dir
   OBJECT_FILE_DIR = CMakeFiles\Minesweeper.dir
 
-build CMakeFiles/Minesweeper.dir/Tile.cpp.obj: CXX_COMPILER__Minesweeper_unscanned_ C$:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.cpp || cmake_object_order_depends_target_Minesweeper
+build CMakeFiles/Minesweeper.dir/Tile.cpp.obj: CXX_COMPILER__Minesweeper_unscanned_Debug C$:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.cpp || cmake_object_order_depends_target_Minesweeper
   DEP_FILE = CMakeFiles\Minesweeper.dir\Tile.cpp.obj.d
-  INCLUDES = -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp
+  FLAGS = -g
+  INCLUDES = -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.hpp
+  OBJECT_DIR = CMakeFiles\Minesweeper.dir
+  OBJECT_FILE_DIR = CMakeFiles\Minesweeper.dir
+
+build CMakeFiles/Minesweeper.dir/Game.cpp.obj: CXX_COMPILER__Minesweeper_unscanned_Debug C$:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.cpp || cmake_object_order_depends_target_Minesweeper
+  DEP_FILE = CMakeFiles\Minesweeper.dir\Game.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.hpp
   OBJECT_DIR = CMakeFiles\Minesweeper.dir
   OBJECT_FILE_DIR = CMakeFiles\Minesweeper.dir
 
@@ -64,7 +78,8 @@ build CMakeFiles/Minesweeper.dir/Tile.cpp.obj: CXX_COMPILER__Minesweeper_unscann
 #############################################
 # Link the executable Minesweeper.exe
 
-build Minesweeper.exe: CXX_EXECUTABLE_LINKER__Minesweeper_ CMakeFiles/Minesweeper.dir/main.cpp.obj CMakeFiles/Minesweeper.dir/Tile.cpp.obj
+build Minesweeper.exe: CXX_EXECUTABLE_LINKER__Minesweeper_Debug CMakeFiles/Minesweeper.dir/main.cpp.obj CMakeFiles/Minesweeper.dir/Tile.cpp.obj CMakeFiles/Minesweeper.dir/Game.cpp.obj
+  FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Minesweeper.dir
   POST_BUILD = cd .

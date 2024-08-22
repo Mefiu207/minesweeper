@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/build",
+  "command": "C:\\MinGW\\bin\\c++.exe -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.hpp -g -o CMakeFiles\\Minesweeper.dir\\main.cpp.obj -c C:\\Users\\Mateusz\\Desktop\\C++\\Projekty\\minesweeper\\main.cpp",
+  "file": "C:\\Users\\Mateusz\\Desktop\\C++\\Projekty\\minesweeper\\main.cpp",
+  "output": "CMakeFiles\\Minesweeper.dir\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/build",
+  "command": "C:\\MinGW\\bin\\c++.exe -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.hpp -g -o CMakeFiles\\Minesweeper.dir\\Tile.cpp.obj -c C:\\Users\\Mateusz\\Desktop\\C++\\Projekty\\minesweeper\\Tile.cpp",
+  "file": "C:\\Users\\Mateusz\\Desktop\\C++\\Projekty\\minesweeper\\Tile.cpp",
+  "output": "CMakeFiles\\Minesweeper.dir\\Tile.cpp.obj"
+},
+{
+  "directory": "C:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/build",
+  "command": "C:\\MinGW\\bin\\c++.exe -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Field.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Tile.hpp -IC:/Users/Mateusz/Desktop/C++/Projekty/minesweeper/Game.hpp -g -o CMakeFiles\\Minesweeper.dir\\Game.cpp.obj -c C:\\Users\\Mateusz\\Desktop\\C++\\Projekty\\minesweeper\\Game.cpp",
+  "file": "C:\\Users\\Mateusz\\Desktop\\C++\\Projekty\\minesweeper\\Game.cpp",
+  "output": "CMakeFiles\\Minesweeper.dir\\Game.cpp.obj"
+}
+]
